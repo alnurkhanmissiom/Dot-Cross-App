@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DOT CROSS</title>
+  <link rel="icon" href="./img/logo.png" type="image/png" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+  <h1>DOT CROSS</h1>
+  <button id="themeToggle">🌓 Toggle Theme</button>
+
+  <div class="mode-dropdown">
+    <select id="modeSelector" aria-label="Choose Game Mode">
+      <option value="" disabled selected>🎮 Choose Game Mode</option>
+      <option value="twoPlayer">👥 2 Player</option>
+      <option value="easy">😊 Easy</option>
+      <option value="medium">😎 Medium</option>
+      <option value="impossible">🧠 Impossible</option>
+    </select>
+  </div>
+
+  <div id="status" aria-live="polite" aria-atomic="true">Choose a mode to start</div>
+
+  <div class="board" role="grid" aria-label="Tic Tac Toe board">
+    <div class="cell" data-index="0" role="gridcell" tabindex="0" aria-label="Cell 1"></div>
+    <div class="cell" data-index="1" role="gridcell" tabindex="0" aria-label="Cell 2"></div>
+    <div class="cell" data-index="2" role="gridcell" tabindex="0" aria-label="Cell 3"></div>
+    <div class="cell" data-index="3" role="gridcell" tabindex="0" aria-label="Cell 4"></div>
+    <div class="cell" data-index="4" role="gridcell" tabindex="0" aria-label="Cell 5"></div>
+    <div class="cell" data-index="5" role="gridcell" tabindex="0" aria-label="Cell 6"></div>
+    <div class="cell" data-index="6" role="gridcell" tabindex="0" aria-label="Cell 7"></div>
+    <div class="cell" data-index="7" role="gridcell" tabindex="0" aria-label="Cell 8"></div>
+    <div class="cell" data-index="8" role="gridcell" tabindex="0" aria-label="Cell 9"></div>
+  </div>
+
+  <div id="winnerMessage" aria-live="polite" aria-atomic="true"></div>
+
+  <button id="resetBtn" aria-label="Reset Game">🔄 Reset</button>
+
+  <footer>© 2025 Dot-Cross</footer>
+
+  <script src="./js/index.js"></script>
+</body>
+</html>

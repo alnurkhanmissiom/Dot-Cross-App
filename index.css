@@ -1,0 +1,150 @@
+:root {
+      --bg: #0f0f0f;
+      --cell-bg: rgba(255, 255, 255, 0.05);
+      --border-color: #0ff;
+      --text-color: #fff;
+      --accent: #ff4081;
+    }
+    body.light {
+      --bg: #fefefe;
+      --cell-bg: rgba(0, 0, 0, 0.05);
+      --border-color: #111;
+      --text-color: #000;
+      --accent: #6200ea;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 5vw;
+      margin: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    h1 {
+      font-size: 2.2rem;
+      color: var(--border-color);
+      text-shadow: 0 0 10px var(--border-color);
+      margin-bottom: 1rem;
+    }
+    .mode-dropdown {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    #modeSelector {
+      padding: 12px 20px;
+      font-size: 1.1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--bg);
+      color: var(--border-color);
+      width: 90%;
+      max-width: 300px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #modeSelector:focus {
+      outline: none;
+      box-shadow: 0 0 10px var(--border-color);
+    }
+    #themeToggle,
+    #resetBtn {
+      background: transparent;
+      border: 2px solid var(--border-color);
+      color: var(--border-color);
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 300px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 10px auto;
+    }
+    #themeToggle:hover,
+    #resetBtn:hover {
+      background: var(--border-color);
+      color: var(--bg);
+      box-shadow: 0 0 10px var(--border-color);
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4vw;
+      justify-content: center;
+      margin: 5vh auto;
+      width: 90vw;
+      max-width: 400px;
+    }
+
+
+    .cell {
+      aspect-ratio: 1 / 1;
+      background: var(--cell-bg);
+      border: 2px solid var(--border-color);
+      font-size: 2.5rem;
+      color: var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cell:hover {
+      background: rgba(0, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+    .cell.winner {
+      background-color: var(--accent);
+      color: white;
+      animation: pulseGlow 1s ease-in-out infinite alternate;
+      font-weight: bold;
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 5px var(--accent); }
+      100% { box-shadow: 0 0 20px var(--accent); }
+    }
+    #winnerMessage {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background-color: var(--accent);
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 700;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px var(--accent);
+      z-index: 1000;
+      transition: transform 0.4s ease;
+      pointer-events: none;
+      user-select: none;
+      text-align: center;
+      max-width: 90vw;
+    }
+    #winnerMessage.show {
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: auto;
+    }
+    #status {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #ccc;
+    }
+    footer {
+      margin-top: 20px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 400px) {
+      h1 { font-size: 1.8rem; }
+      #winnerMessage { font-size: 1.8rem; padding: 1rem 1.5rem; }
+      #modeSelector, #resetBtn, #themeToggle { font-size: 1rem; padding: 10px 20px; }
+    }
+
